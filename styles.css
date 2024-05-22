@@ -1,0 +1,262 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+
+@font-face {
+  font-family: FiraGO;
+  font-style: normal;
+  src: url(https://www.girchi.com/themes/custom/girchi/dist/css/fonts/FiraGO-Medium.woff2)
+    format("woff2");
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "FiraGO";
+}
+
+main {
+  height: 100vh;
+  background: blue;
+  font-family: "FiraGO";
+}
+
+section#up {
+  height: 50%;
+  background: linear-gradient(to bottom right, #1e293b 10%, #020617);
+}
+
+section#up h1 {
+  font-weight: bold;
+  font-feature-settings: "case" on;
+  color: #fefefe;
+  text-align: center;
+  font-size: 48px;
+  padding-top: 30px;
+}
+
+#buffer-zone {
+  height: 18px;
+  background-color: white;
+}
+
+section#down {
+  background-color: #05ae5b;
+  overflow: hidden;
+}
+
+main #cards {
+  position: absolute;
+  inset: 0;
+}
+
+#cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 250px;
+}
+
+#cards .card {
+  width: 250px;
+  height: 402px;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+#cards .card .side {
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+#cards .card#standard .side {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background-color: #e3cfb4;
+}
+
+#cards .card#gold .side {
+  border: 1px solid rgba(255, 255, 255, 1);
+  background-color: #252628;
+}
+
+#cards .card .front .number {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 18px;
+}
+
+#cards .card .front .number h1 {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: black;
+  font-size: 130px;
+  letter-spacing: -18px;
+  position: relative;
+  right: 12px;
+  top: 30px;
+}
+
+#cards .card#standard .front .number h1 {
+  color: #007a41;
+}
+
+#cards .card#gold .front .number h1 {
+  color: #fefefe;
+}
+
+#cards .card .front .number .hole-cover {
+  width: 40px;
+  aspect-ratio: 1/1;
+  position: absolute;
+  border-radius: 50%;
+  right: 78px;
+  top: 115px;
+}
+
+#cards .card#standard .number .hole-cover {
+  background-color: #007a41;
+}
+
+#cards .card#gold .number .hole-cover {
+  background-color: #fefefe;
+}
+
+#cards .card .number .pine {
+  position: absolute;
+  top: 113px;
+  right: 75px;
+  transform: rotate(-45deg);
+}
+
+#cards .card .front h2 {
+  font-feature-settings: "case" on;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+#cards .card#standard .front h2 {
+  color: #020617;
+}
+
+#cards .card#gold .front h2 {
+  color: #00b55a;
+}
+
+#cards .card .front h2 {
+  font-feature-settings: "case" on;
+  color: #020617;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+#cards .card .front .big-pine {
+  transform: rotate(-45deg) translateY(30px) translateX(-100px);
+}
+
+#cards .card .back .data {
+  padding: 30px 18px 0 18px;
+  margin-bottom: 30px;
+}
+
+#cards .card .back .data .datum {
+  margin-bottom: 10px;
+  font-feature-settings: "case" on;
+  position: relative;
+  padding-left: 8px;
+}
+
+#cards .card .back .data .datum::before {
+  content: "";
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 5px;
+  background: #007a41;
+  position: absolute;
+}
+
+#cards .card#gold .back .data .datum::before {
+  background: #ee3b3d;
+}
+
+#cards .card .back .data .datum .title {
+  font-size: 12px;
+}
+
+#cards .card#standard .back .data .datum .title {
+  color: #007a41;
+}
+
+#cards .card#gold .back .data .datum .title {
+  color: #00b55a;
+}
+
+#cards .card#gold .back .data .datum .value {
+  color: #020617;
+}
+
+#cards .card#gold .back .data .datum .value {
+  color: #fefefe;
+}
+
+#cards .card .back .website {
+  display: flex;
+  justify-content: center;
+}
+
+#cards .card .back .website .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#cards .card#standard .back .website .icon {
+  background-color: #020617;
+}
+
+#cards .card#gold .back .website .icon {
+  background-color: white;
+}
+
+#cards .card .back .website .url {
+  color: #020617;
+  background-color: #ee3b3d;
+  padding: 0 5px;
+}
+
+#cards .card .back .big-number {
+  height: 170px;
+  background-color: #007a41;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+#cards .card#standard .back .big-number {
+  background-color: #007a41;
+}
+
+#cards .card#gold .back .big-number {
+  background-color: #00a354;
+}
+
+#cards .card .back .big-number .number {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: bold;
+  font-size: 300px;
+  letter-spacing: -40px;
+  position: absolute;
+  top: -100px;
+  left: -37px;
+}
+
+#cards .card#standard .back .big-number .number {
+  color: #e3cfb4;
+}
+
+#cards .card#gold .back .big-number .number {
+  color: #252628;
+}
