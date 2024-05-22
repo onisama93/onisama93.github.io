@@ -116,6 +116,7 @@ section#down {
   section#down {
     background: linear-gradient(to top right, #05ae5b, #007a41);
     height: 100%;
+    padding-bottom: 300px;
   }
 }
 
