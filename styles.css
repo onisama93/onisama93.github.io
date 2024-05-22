@@ -27,6 +27,54 @@ section#up {
   background: linear-gradient(to bottom right, #1e293b 10%, #020617);
 }
 
+#personalization-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 220px;
+  margin: 0 auto;
+}
+
+#personalization-form input {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  outline: none;
+  font-family: "FiraGO";
+  padding: 6px 10px;
+  transition: 0.2s border-color;
+}
+
+#personalization-form input:focus {
+  border: 1px solid #00b55a;
+}
+
+#personalization-form button#ok-button {
+  font-family: "FiraGO";
+  border: none;
+  background: #007a41;
+  color: #fefefe;
+  border-radius: 3px;
+  font-size: 14px;
+  padding: 6px 12px;
+  font-feature-settings: "case" on;
+  margin-left: auto;
+}
+
+#personalization-form button#ok-button:active {
+  outline: 3px solid rgba(0, 181, 90, 0.5);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"] {
+  -webkit-appearance: none;
+  margin: 0;
+  -moz-appearance: textfield !important;
+  appearance: textfield;
+}
+
 section#up a#personalization-button {
   font-family: "FiraGO";
   border: none;
@@ -37,10 +85,11 @@ section#up a#personalization-button {
   padding: 6px 12px;
   font-feature-settings: "case" on;
   position: absolute;
-  top: 20px;
-  right: 15px;
+  top: 10px;
+  right: 10px;
   box-shadow: 0 0 5px#007a41;
   text-decoration: none;
+  z-index: 10;
 }
 
 section#up h1 {
@@ -49,7 +98,7 @@ section#up h1 {
   color: #fefefe;
   text-align: center;
   font-size: 48px;
-  padding-top: 30px;
+  padding-top: 70px;
 }
 
 #buffer-zone {
@@ -59,20 +108,25 @@ section#up h1 {
 
 section#down {
   background: linear-gradient(to top right, #05ae5b, #007a41);
-  height: 50%;
+  height: 100%;
   overflow: hidden;
 }
 
 main #cards {
   position: absolute;
   inset: 0;
-}
-
-#cards {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 250px;
+}
+
+@media (max-width: 768px) {
+  main #cards {
+    flex-direction: column;
+    gap: 50px;
+    padding-top: 500px;
+  }
 }
 
 #cards .card {

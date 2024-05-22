@@ -13,12 +13,46 @@
   </head>
   <body>
     <main>
-      <div id="ex1" class="modal">hello i am modal</div>
-
       <section id="up">
         <h1>გირჩის პარტბილეთი</h1>
 
-        <a href="#ex1" id="personalization-button" rel="modal:open">
+        <div id="personalization-form-modal" class="modal">
+          <div id="personalization-form">
+            <input id="name" type="text" placeholder="სახელი" />
+
+            <div style="width: 100%">
+              <input
+                id="personal-number"
+                type="number"
+                placeholder="პირადი ნომერი"
+              />
+              <p style="font-size: 9px; color: rgba(0, 0, 0, 0.4)">
+                აქ შეყვანილი მონაცემები არსად არ იგზავნება.
+              </p>
+            </div>
+
+            <div style="width: 100%">
+              <input
+                id="ticket-number"
+                type="number"
+                placeholder="პარტბილეთის ნომერი"
+              />
+              <p style="font-size: 9px; color: rgba(0, 0, 0, 0.4)">
+                დიზაინის მიხედვით 5 რიცხვი. მაგ: 00012
+              </p>
+            </div>
+
+            <div style="display: flex; justify-self: flex-end; width: 100%">
+              <button id="ok-button">ეგაა</button>
+            </div>
+          </div>
+        </div>
+
+        <a
+          href="#personalization-form-modal"
+          id="personalization-button"
+          rel="modal:open"
+        >
           პერსონალიზაცია
         </a>
       </section>
@@ -81,18 +115,18 @@
           <div class="back side">
             <div class="data">
               <div class="datum">
-                <div class="value">ჰერმან საბო</div>
+                <div class="value name">ჰერმან საბო</div>
                 <div class="title">წევრი</div>
               </div>
 
               <div class="datum">
                 <div class="title">პირადი ნომერი</div>
-                <div class="value">01027048470</div>
+                <div class="value personal-number">01027048470</div>
               </div>
 
               <div class="datum">
                 <div class="title">პარტბილეთის ნომერი</div>
-                <div class="value">00018</div>
+                <div class="value ticket-number">00018</div>
               </div>
             </div>
 
@@ -182,18 +216,18 @@
           <div class="back side">
             <div class="data">
               <div class="datum">
-                <div class="value">ჰერმან საბო</div>
+                <div class="value name">ჰერმან საბო</div>
                 <div class="title">წევრი</div>
               </div>
 
               <div class="datum">
                 <div class="title">პირადი ნომერი</div>
-                <div class="value">01027048470</div>
+                <div class="value personal-number">01027048470</div>
               </div>
 
               <div class="datum">
                 <div class="title">პარტბილეთის ნომერი</div>
-                <div class="value">00018</div>
+                <div class="value ticket-number">00018</div>
               </div>
             </div>
 
@@ -618,10 +652,51 @@
       </script>
 
       <script>
+        const personalities = [
+          {
+            name: "მელიტონ ფრიდმანიძე",
+            ticketNumber: "00001",
+          },
+          {
+            name: "გუბაზ სანიკიძე",
+            ticketNumber: "00002",
+          },
+          {
+            name: "ფრიდონ ბასტიაშვილი",
+            ticketNumber: "00003",
+          },
+          {
+            name: "თემო ფონი",
+            ticketNumber: "04141",
+          },
+          {
+            name: "ფრიდონ ჰაიეკაძე",
+            ticketNumber: "00009",
+          },
+        ];
+
+        const randomPersonIdx = Math.ceil(Math.random() * personalities.length);
+        const randomPerson = personalities[randomPersonIdx];
+        $(".datum .name").text(randomPerson.name);
+        $(".datum .personal-number").text("00000000000");
+        $(".datum .ticket-number").text(randomPerson.ticketNumber);
+
         $("#cards .card").flip();
         $("#cards .card").tilt({
           scale: 1.2,
           axis: "x",
+        });
+
+        $("button#ok-button").click(function () {
+          const name = $("input#name").val();
+          const personalNumber = $("input#personal-number").val();
+          const ticketNumber = $("input#ticket-number").val();
+
+          $(".datum .name").text(name);
+          $(".datum .personal-number").text(personalNumber);
+          $(".datum .ticket-number").text(ticketNumber);
+
+          $("a.close-modal").click();
         });
       </script>
     </main>
