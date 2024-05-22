@@ -133,7 +133,7 @@ main #cards {
   main #cards {
     flex-direction: column;
     gap: 50px;
-    padding-top: 500px;
+    padding-top: 600px;
   }
 }
 
