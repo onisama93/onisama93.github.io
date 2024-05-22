@@ -112,6 +112,14 @@ section#down {
   overflow: hidden;
 }
 
+@media (max-width: 768px) {
+  section#down {
+    background: linear-gradient(to top right, #05ae5b, #007a41);
+    height: 50%;
+    overflow: hidden;
+  }
+}
+
 main #cards {
   position: absolute;
   inset: 0;
