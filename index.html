@@ -682,10 +682,15 @@
         $(".datum .ticket-number").text(randomPerson.ticketNumber);
 
         $("#cards .card").flip();
-        $("#cards .card").tilt({
-          scale: 1.2,
-          axis: "x",
-        });
+
+        // let's assume everything with screen larger
+        // than 768px uses a mouse.
+        if (window.innerWidth > 768) {
+          $("#cards .card").tilt({
+            scale: 1.2,
+            axis: "x",
+          });
+        }
 
         $("button#ok-button").click(function () {
           const name = $("input#name").val();
